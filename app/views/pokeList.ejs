@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+<main class="mainContainer">
+
+  <div class="pokemons--container" >
+    <% for (const pokemon of pokemons) { %>  
+      <div class="pokemon--card" >
+        <a href="#">
+          <img src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
+          <p class="pokeName"><%= pokemon.nom %></p>
+        </a>
+      </div>
+    <% } %>
+  </div>
+   
+
+</main>
+
+<%- include('footer') %> 
