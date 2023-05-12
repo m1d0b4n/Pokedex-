@@ -6,6 +6,8 @@ const mainController = require('./controllers/mainController');
 
 router.get('/', mainController.home);
 router.get('/pokelist', mainController.pokeList);
+router.get('/pokecard/:id', mainController.pokecard);
+// router.use(mainController.notFound);
 
 
 

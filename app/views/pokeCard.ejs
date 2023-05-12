@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+<main class="pokecard-container">
+  <h1> <%= pokemon[0].nom %> </h1>
+  <div class="pokecard-picture">
+    <img src="/img/<%= pokemon[0].numero %>.png" alt="image de <%= pokemon[0].nom %> ">
+  </div>
+  <div class="pokecard-infos">
+    <p> Nom : <%= pokemon[0].nom %> </p>
+    <p> PVs : <%= pokemon[0].pv %> </p>
+    <p> Attaque : <%= pokemon[0].attaque %> </p>
+    <p> Defense : <%= pokemon[0].defense %> </p>
+    <p> Attaque spé : <%= pokemon[0].attaque_spe %> </p>
+    <p> Defense spé : <%= pokemon[0].defense_spe %> </p>
+    <p> Vitesse : <%= pokemon[0].vitesse %> </p>
+  </div>
+</main>
+
+<%- include('footer') %>

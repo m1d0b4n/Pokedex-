@@ -2,18 +2,18 @@
 
 <main class="mainContainer">
 
-  <div class="pokemons--container" >
-    <% for (const pokemon of pokemons) { %>  
-      <div class="pokemon--card" >
-        <a href="#">
-          <img src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
-          <p class="pokeName"><%= pokemon.nom %></p>
-        </a>
-      </div>
+  <div class="pokemons--container">
+    <% for (const pokemon of pokemons) { %>
+    <div class="pokemon--card">
+      <a href="/pokecard/<%= pokemon.id %>">
+        <img class="poke-picture" src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
+        <p class="poke-name"><%= pokemon.nom %></p>
+      </a>
+    </div>
     <% } %>
   </div>
-   
+
 
 </main>
 
-<%- include('footer') %> 
+<%- include('footer') %>

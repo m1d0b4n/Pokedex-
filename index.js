@@ -10,14 +10,14 @@ app.set('views', 'app/views');
 app.use(express.static('public'));
 
 
-const session = require('express-session');
-app.use(session(
-	{
-		secret: process.env.SESSION_SECRET,
-		resave: true,
-		saveUninitialized: true
-	}
-));
+// const session = require('express-session');
+// app.use(session(
+// 	{
+// 		secret: process.env.SESSION_SECRET,
+// 		resave: true,
+// 		saveUninitialized: true
+// 	}
+// ));
 
 
 app.use(router);
@@ -29,5 +29,5 @@ app.use(router);
 
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port : ${PORT}`);
+	console.log(`Server listening on port : ${PORT}`);
 });
