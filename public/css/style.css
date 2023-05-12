@@ -1,6 +1,7 @@
 body,
 .mainContainer {
   max-width: 100%;
+  max-height: 100%;
   margin: 0.5em;
 }
 
@@ -14,7 +15,7 @@ main {
 }
 
 .mainContainer {
-  margin-bottom: 8%;
+  padding-bottom: 5em;
 }
 
 /* HEADER */
@@ -49,6 +50,18 @@ main {
   #nav-bar {
     display: none;
   }
+}
+
+/* HOME */
+
+.home-title {
+  text-align: center;
+}
+
+.home-gif {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.91;
 }
 
 /* POKELIST */
@@ -89,22 +102,58 @@ main {
   margin: 0;
 }
 
+/* POKECARD */
+
+.pokecard-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokecard-title {
+  color: white;
+  margin-bottom: 1em;
+  padding: 0.3em;
+  background-color: #982C2C;
+  border-radius: 20px;
+}
+
+.pokecard-picture {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.pokecard-picture img {
+  max-width: 90%;
+}
+
+.pokecard-infos {
+  min-width: 90%;
+  text-align: center;
+  background-color: rgba(156, 156, 156, 0.329);
+  border-radius: 10px;
+}
+
 /* FOOTER */
 
 .footer {
-  position: fixed;
-  bottom: 0;
   text-align: center;
-  left: 12%;
-  right: 12%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 1.5em;
 }
 
 .footer--text {
+  width: 80%;
   font-size: 14px;
-  background-color: rgba(239, 227, 227, 0.850);
+  background-color: rgba(239, 227, 227, 0.623);
   border-radius: 20px;
-  padding: 0.2%;
-  margin-bottom: 0.4%;
+  padding: 0.3em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 404 */
