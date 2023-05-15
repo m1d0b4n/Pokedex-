@@ -5,19 +5,23 @@ const mobileMenuCloseButton = document.querySelector('.mobile-menu-popup-close-b
 const main = document.querySelector('.mainContainer');
 const footer = document.querySelector('.footer');
 
-console.log(main);
 
 
 mobileMenuOpenButton.addEventListener('click', () => {
     if (mobileMenu.style.display === 'flex') {
         mobileMenu.style.display = '';
-        mobileMenuOpenButton.classList.toggle('.nav-bar-mobile-button-open-click');
+        main.style.display = '';
+        footer.style.display = '';
     } else {
-        mobileMenu.style.display = 'flex'
-        mobileMenuOpenButton.classList.toggle('.nav-bar-mobile-button-open-click');
+        mobileMenu.style.display = 'flex';
+        main.style.display = 'none';
+        footer.style.display = 'none';
     }
 });
 
 mobileMenuCloseButton.addEventListener('click', () => {
     mobileMenu.style.display = '';
+    main.style.display = '';
+    footer.style.display = '';
 });
+

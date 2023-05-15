@@ -15,7 +15,6 @@ main {
 }
 
 .mainContainer {
-  display: block;
   padding-bottom: 5em;
 }
 
@@ -174,6 +173,8 @@ main {
   margin-right: auto;
   border-radius: 10px;
   animation-duration: 4s;
+  padding-top: 2em;
+  padding-bottom: 2.4em;
 }
 
 .mobile-menu-popup-link {
@@ -285,7 +286,6 @@ main {
 /* FOOTER */
 
 .footer {
-  display: block;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
