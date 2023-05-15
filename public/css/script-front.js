@@ -8,14 +8,16 @@ const footer = document.querySelector('.footer');
 console.log(main);
 
 
-mobileMenuOpenButton.addEventListener('click', function () {
+mobileMenuOpenButton.addEventListener('click', () => {
     if (mobileMenu.style.display === 'flex') {
         mobileMenu.style.display = '';
+        mobileMenuOpenButton.classList.toggle('.nav-bar-mobile-button-open-click');
     } else {
         mobileMenu.style.display = 'flex'
+        mobileMenuOpenButton.classList.toggle('.nav-bar-mobile-button-open-click');
     }
 });
 
-mobileMenuCloseButton.addEventListener('click', function () {
+mobileMenuCloseButton.addEventListener('click', () => {
     mobileMenu.style.display = '';
 });
