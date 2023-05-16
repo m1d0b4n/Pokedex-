@@ -6,13 +6,12 @@
     <% for (const pokemon of pokemons) { %>
     <div class="pokemon--card">
       <a href="/pokecard/<%= pokemon.id %>">
-        <img class="poke-picture" src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
-        <p class="poke-name"><%= pokemon.nom %></p>
+        <img class="poke-picture" src="<%= pokemon.image %>" alt="<%= pokemon.name %> illustration">
+        <p class="poke-name"><%= pokemon.name %></p>
       </a>
     </div>
     <% } %>
   </div>
-
 
 </main>
 

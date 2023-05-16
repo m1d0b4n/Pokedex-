@@ -1,19 +1,34 @@
 <%- include('header') %>
 
-<main class="pokecard-container">
-  <h1 class="pokecard-title"> <%= pokemon[0].nom %> </h1>
-  <div class="pokecard-picture">
-    <img src="/img/<%= pokemon[0].numero %>.png" alt="image de <%= pokemon[0].nom %> ">
-  </div>
-  <div class="pokecard-infos">
-    <p> Nom : <%= pokemon[0].nom %> </p>
-    <p> PVs : <%= pokemon[0].pv %> </p>
-    <p> Attaque : <%= pokemon[0].attaque %> </p>
-    <p> Defense : <%= pokemon[0].defense %> </p>
-    <p> Attaque spé : <%= pokemon[0].attaque_spe %> </p>
-    <p> Defense spé : <%= pokemon[0].defense_spe %> </p>
-    <p> Vitesse : <%= pokemon[0].vitesse %> </p>
-  </div>
-</main>
+  <main class="pokecard-container">
+    <h1 class="pokecard-title">
+      <%= pokemon.name %>
+    </h1>
+    <div class="pokecard-picture">
+      <img src="<%= pokemon.image %>" alt="image de <%= pokemon.name %> ">
+    </div>
+    <p class="tooltip-text"></p>
+    <div class="pokecard-types">
+      <% pokemon.apiTypes.forEach(type=> { %>
+        <img class="pokecard-types-img" src="<%= type.image %>" tag="<%= type.name %>" alt="type-logo">
+        <% }) %>
+    </div>
+    <div class="pokecard-infos">
+      <p> Nom : <%= pokemon.name %>
+      </p>
+      <p> PVs : <%= pokemon.stats.HP %>
+      </p>
+      <p> Attaque : <%= pokemon.stats.attack %>
+      </p>
+      <p> Defense : <%= pokemon.stats.defense %>
+      </p>
+      <p> Attaque spé : <%= pokemon.stats.special_attack %>
+      </p>
+      <p> Defense spé : <%= pokemon.stats.special_defense %>
+      </p>
+      <p> Vitesse : <%= pokemon.stats.speed %>
+      </p>
+    </div>
+  </main>
 
-<%- include('footer') %>
+  <%- include('footer') %>

@@ -3,20 +3,23 @@ const db = require('./database');
 const dataMapper = {
 
   getAllPokemons: async () => {
-    const query = {
-      text: `SELECT * FROM "pokemon"`,
-    };
-    const results = await db.query(query);
-    return results.rows;
+    return fetch('https://pokebuildapi.fr/api/v1/pokemon')
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Erreur de réseau : ' + response.status);
+        }
+        return response.json();
+      });
   },
 
   getOnePokemon: async (id) => {
-    const query = {
-      text: `SELECT * FROM "pokemon" WHERE id = $1`,
-      values: [id],
-    };
-    const result = await db.query(query);
-    return result.rows;
+    return fetch(`https://pokebuildapi.fr/api/v1/pokemon/${id}`)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Erreur de réseau : ' + response.status);
+        }
+        return response.json();
+      });
   },
 
 
