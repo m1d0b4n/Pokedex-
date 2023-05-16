@@ -291,9 +291,20 @@ main {
 
 .pokecard-types-img {
   height: inherit;
+  cursor: pointer;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  border-radius: 40px;
 }
 
-.tooltip-text {}
+.tooltip-text {
+  display: none;
+  color: white;
+  font-size: 0.9em;
+  background-color: rgba(36, 36, 36, 0.527);
+  padding: 0.3em;
+  border-radius: 5px;
+}
 
 .pokecard-infos {
   min-width: 90%;

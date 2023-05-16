@@ -7,7 +7,7 @@
     <div class="pokecard-picture">
       <img src="<%= pokemon.image %>" alt="image de <%= pokemon.name %> ">
     </div>
-    <p class="tooltip-text"></p>
+    <p class="tooltip-text" status="close"></p>
     <div class="pokecard-types">
       <% pokemon.apiTypes.forEach(type=> { %>
         <img class="pokecard-types-img" src="<%= type.image %>" tag="<%= type.name %>" alt="type-logo">
