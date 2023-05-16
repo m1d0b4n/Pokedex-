@@ -125,7 +125,7 @@ main {
   background-color: white;
   width: 2.6em;
   cursor: pointer;
-  transition: 1s;
+  transition: 200ms;
 }
 
 #nav-bar-mobile-button-open:active {
@@ -187,6 +187,13 @@ main {
   padding: 0.8em;
   width: 70%;
   text-align: center;
+  transition: 100s;
+}
+
+.mobile-menu-popup-link:active {
+  background-color: #c140404f;
+  transform: rotateY(360deg);
+  transition: 200ms;
 }
 
 .mobile-menu-popup-close-button {

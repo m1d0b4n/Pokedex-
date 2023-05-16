@@ -35,19 +35,13 @@ for (img of typesImg) {
     img.addEventListener('click', (event) => {
         const pokeTypeName = event.target.attributes[2].value;
 
-        if (infoBubble.attributes[1].value === 'close' && pokeTypeName != currentTypeOpen) {
+        if (pokeTypeName !== currentTypeOpen) {
             infoBubble.attributes[1].value = 'open';
             currentTypeOpen = pokeTypeName;
             infoBubble.style.display = 'block';
             infoBubble.textContent = pokeTypeName;
-
-        } else if (infoBubble.attributes[1].value === 'open' && pokeTypeName != currentTypeOpen) {
-            infoBubble.attributes[1].value = 'open'
-            currentTypeOpen = pokeTypeName;
-            infoBubble.style.display = 'block';
-            infoBubble.textContent = pokeTypeName;
-        } else if (infoBubble.attributes[1].value === 'open' && pokeTypeName === currentTypeOpen) {
-            infoBubble.attributes[1].value = 'close'
+        } else {
+            infoBubble.attributes[1].value = 'close';
             currentTypeOpen = '';
             infoBubble.style.display = 'none';
         }
