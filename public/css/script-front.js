@@ -8,7 +8,7 @@ const typesImg = document.querySelectorAll('.pokecard-types-img');
 const infoBubble = document.querySelector('.tooltip-text');
 
 
-// open button
+// OPEN MENU BUTTON
 mobileMenuOpenButton.addEventListener('click', () => {
     if (mobileMenu.style.display === 'flex') {
         mobileMenu.style.display = '';
@@ -21,23 +21,35 @@ mobileMenuOpenButton.addEventListener('click', () => {
     }
 });
 
-// close button
+// CLOSE MENU BUTTON
 mobileMenuCloseButton.addEventListener('click', () => {
     mobileMenu.style.display = '';
     main.style.display = '';
     footer.style.display = '';
 });
 
-// types icons popup
+// TYPES POPUP BUTTON
+let currentTypeOpen = '';
+
 for (img of typesImg) {
     img.addEventListener('click', (event) => {
         const pokeTypeName = event.target.attributes[2].value;
 
-        if (infoBubble.textContent === '') {
+        if (infoBubble.attributes[1].value === 'close' && pokeTypeName != currentTypeOpen) {
+            infoBubble.attributes[1].value = 'open';
+            currentTypeOpen = pokeTypeName;
+            infoBubble.style.display = 'block';
             infoBubble.textContent = pokeTypeName;
-            infoBubble.appendChild(typesImg);
-        } else {
-            infoBubble.textContent = '';
-        };
+
+        } else if (infoBubble.attributes[1].value === 'open' && pokeTypeName != currentTypeOpen) {
+            infoBubble.attributes[1].value = 'open'
+            currentTypeOpen = pokeTypeName;
+            infoBubble.style.display = 'block';
+            infoBubble.textContent = pokeTypeName;
+        } else if (infoBubble.attributes[1].value === 'open' && pokeTypeName === currentTypeOpen) {
+            infoBubble.attributes[1].value = 'close'
+            currentTypeOpen = '';
+            infoBubble.style.display = 'none';
+        }
     });
 };
