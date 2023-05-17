@@ -22,8 +22,25 @@ const dataMapper = {
       });
   },
 
+  getTypes: async () => {
+    return fetch(`https://pokebuildapi.fr/api/v1/types`)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Erreur de réseau : ' + response.status);
+        }
+        return response.json();
+      });
+  },
 
-
+  filterPokemonsByType: async (selectType) => {
+    return fetch(`https://pokebuildapi.fr/api/v1/pokemon/type/${selectType}`)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Erreur de réseau : ' + response.status);
+        }
+        return response.json();
+      });
+  },
 
 
 };

@@ -11,8 +11,4 @@
             "password": "pokedex"
         }
     ],
-    "files.associations": {
-        // extension name : html
-        "*.ejs": "html",
-    }
 }

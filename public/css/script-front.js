@@ -6,6 +6,7 @@ const main = document.querySelector('.mainContainer') || document.querySelector(
 const footer = document.querySelector('.footer');
 const typesImg = document.querySelectorAll('.pokecard-types-img');
 const infoBubble = document.querySelector('.tooltip-text');
+const searchTypeForm = document.querySelector('#search-form');
 
 
 // OPEN MENU BUTTON
@@ -47,3 +48,9 @@ for (img of typesImg) {
         }
     });
 };
+
+// TYPES FILTER
+
+searchTypeForm.addEventListener('submit', (event) => {
+    const selectType = document.getElementById('type-input').value;
+});
