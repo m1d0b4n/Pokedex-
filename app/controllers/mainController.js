@@ -12,6 +12,8 @@ const mainController = {
     res.render('pokeList', {
       pokemons: pokemons,
       types: types,
+      selectType: null,
+      filterValue: 'null',
     });
   },
 
@@ -28,27 +30,38 @@ const mainController = {
   },
 
   filterPokeList: async (req, res) => {
-    const selectType = req.body.pokeType; // Récupérer le type sélectionné depuis le corps de la requête
+    const filterValue = req.body.pokeType; // Récupérer le type sélectionné depuis le corps de la requête
 
 
     try {
       const pokemons = await dataMapper.getAllPokemons();
-      const pokemonsFiltered = await dataMapper.filterPokemonsByType(selectType); // Effectuer le filtrage dans le datamapper
+      const pokemonsFiltered = await dataMapper.filterPokemonsByType(filterValue); // Effectuer le filtrage dans le datamapper
       const types = await dataMapper.getTypes();
+      let typeFiltered = null;
 
-      if (selectType === "null") {
-        console.log('je suis ici');
+      types.filter((type) => {
+        if (type.name === filterValue) {
+          typeFiltered = {
+            name: type.name,
+            image: type.image,
+          }
+        }
+      });
+
+      if (filterValue === "null") {
         res.render('pokeList', {
           pokemons: pokemons,
           types: types,
-          selectType: selectType,
+          typeFiltered: typeFiltered,
+          filterValue: filterValue,
         });
       }
       else {
         res.render('pokeList', {
           pokemons: pokemonsFiltered,
           types: types,
-          selectType: selectType,
+          typeFiltered: typeFiltered,
+          filterValue: filterValue,
         });
       }
 

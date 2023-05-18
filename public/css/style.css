@@ -222,6 +222,64 @@ main {
 
 /* POKELIST */
 
+.poke-type-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.poke-type-form-select {
+  background-color: rgb(152, 44, 44);
+  border: none;
+  border-radius: 20px;
+  padding: 0.6em;
+  color: white;
+  margin-right: 0.3em;
+}
+
+.poke-type-form-submit-button {
+  background-color: rgb(152, 44, 44);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 1px 1px 1px black;
+  cursor: pointer;
+  margin-left: 0.3em;
+}
+
+.select-type-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(207, 207, 207, 0.32);
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.4em;
+}
+
+.select-type-img {
+  width: 34px;
+  margin-right: 0.6em;
+}
+
+.select-type-title {
+  color: white;
+  margin: 0;
+  font-size: 1.2em;
+  margin-right: 0.6em;
+}
+
+.select-type-close-button {
+  width: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 .pokemons--container {
   display: flex;
   flex-wrap: wrap;

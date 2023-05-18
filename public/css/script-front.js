@@ -7,6 +7,7 @@ const footer = document.querySelector('.footer');
 const typesImg = document.querySelectorAll('.pokecard-types-img');
 const infoBubble = document.querySelector('.tooltip-text');
 const searchTypeForm = document.querySelector('#search-form');
+const selectTypeCloseButton = document.querySelector('.select-type-close-button');
 
 
 // OPEN MENU BUTTON
@@ -50,7 +51,11 @@ for (img of typesImg) {
 };
 
 // TYPES FILTER
-
 searchTypeForm.addEventListener('submit', (event) => {
     const selectType = document.getElementById('type-input').value;
+});
+
+// TYPE POPUP CLOSE BUTTON
+selectTypeCloseButton.addEventListener('click', () => {
+    window.location.href = 'http://localhost:3000/pokelist';
 });

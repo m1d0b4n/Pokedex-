@@ -2,21 +2,21 @@
 
 <main class="mainContainer">
 
-  <form id="search-form" action="/pokelist/filter" method="post">
-    <label for="type-input">Type :</label>
-    <select id="type-input" name="pokeType">
+  <form class="poke-type-form" id="search-form" action="/pokelist/filter" method="post">
+    <select class="poke-type-form-select" id="type-input" name="pokeType">
       <option value=null>-- Sélectionnez un type --</option>
       <% for (const type of types) { %>
       <option value="<%= type.name %>"> <%= type.name %> </option>
       <% } %>
     </select>
-    <button type="submit">Rechercher</button>
+    <button class="poke-type-form-submit-button" type="submit">Rechercher</button>
   </form>
-  <% if (selectType === 'null') {
-    selectType = null;
-  } %>
-  <% if (selectType && selectType !== null ) { %>
-  <h2><%= selectType %></h2>
+  <% if ( filterValue && filterValue !== 'null' ) { %>
+  <div class="select-type-popup">
+    <img class="select-type-img" src="<%= typeFiltered.image %>" alt="poke-type-logo">
+    <h2 class="select-type-title"><%= typeFiltered.name %></h2>
+    <img class="select-type-close-button" src="/img/icons-front/close-button.png" alt="close-button">
+  </div>
   <% } %>
 
   <div class="pokemons--container">
